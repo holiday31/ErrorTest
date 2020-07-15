@@ -3,13 +3,10 @@ package net.skhu.domain;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
-import org.hibernate.annotations.Table;
-
 import lombok.Data;
 
 @Data
 @Entity
-@Table(appliesTo = "user")
 public class User {
 	@Id
 	String id;
