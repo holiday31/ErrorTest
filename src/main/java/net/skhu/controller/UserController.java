@@ -21,6 +21,12 @@ public class UserController {
 	@Autowired UserService userService;
 	@Autowired UserRepository userRepository;
 
+	@RequestMapping("/")
+    public User test() {
+    	User user=new User("admin1","1234","한지민","관리자1","admin1@naver.com","010-1234-5678","관리자");
+        return user;
+    }
+
     // 회원가입
 	@PostMapping("signup")
     public User signup(@RequestBody User user) {
