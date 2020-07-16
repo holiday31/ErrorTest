@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -53,9 +54,9 @@ public class UserController {
     }
 
     //user 하나 출력
-    @RequestMapping("findBy")
-    public Optional<User> findBy() {
-        return userRepository.findById("admin1");
+    @RequestMapping("findBy/{id}")
+    public User findBy(@PathVariable("id") String id) {
+        return userRepository.findById(id).get();
     }
 
 
