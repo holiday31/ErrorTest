@@ -31,4 +31,7 @@ public class Review {
     @OneToOne
     @JoinColumn(name = "photo")
     UploadFile photo;
+
+//    @JsonIgnore
+//    private MultipartFile file;
 }
