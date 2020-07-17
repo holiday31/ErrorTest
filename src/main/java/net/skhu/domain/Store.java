@@ -20,7 +20,6 @@ public class Store {
     double latitude;
     double longitude;
 
-    //@JsonIgnore
     @OneToMany(mappedBy="store")
     List<Review> reviews;
 

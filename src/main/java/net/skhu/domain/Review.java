@@ -6,6 +6,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
@@ -26,5 +27,8 @@ public class Review {
 	String userId;
 	String text;
 	float score;
-	String photo;
+
+    @OneToOne
+    @JoinColumn(name = "photo")
+    UploadFile photo;
 }

@@ -10,5 +10,4 @@ public class StoreService {
 	@Autowired
 	StoreRepository storeRepository;
 
-
 }
