@@ -5,6 +5,7 @@ import java.util.List;
 
 import org.apache.tomcat.util.http.fileupload.FileUploadException;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -13,16 +14,17 @@ import org.springframework.web.multipart.MultipartFile;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 
+import net.skhu.domain.Clean;
 import net.skhu.domain.Manager;
 import net.skhu.domain.ManagerDto;
 import net.skhu.domain.Store;
 import net.skhu.domain.StoreDto;
 import net.skhu.domain.UploadFile;
+import net.skhu.repository.CleanRepository;
 import net.skhu.repository.ManagerRepository;
 import net.skhu.repository.StoreRepository;
 import net.skhu.repository.UserRepository;
 import net.skhu.service.FileUploadDownloadService;
-
 @RequestMapping("store")
 @RestController
 public class StoreController {
@@ -32,6 +34,8 @@ public class StoreController {
 	ManagerRepository managerRepository;
 	@Autowired
 	UserRepository userRepository;
+	@Autowired
+	CleanRepository cleanRepository;
 	@Autowired
 	private FileUploadDownloadService service;
 
@@ -77,4 +81,23 @@ public class StoreController {
 		managerRepository.save(manager);
 		return manager;
 	}
+
+	@RequestMapping("addClean")
+	public Clean addClean(@RequestBody Clean clean) {
+		Clean c=cleanRepository.save(clean);
+		return c;
+	}
+	@RequestMapping("editClean")
+	public Clean editClean(@RequestBody Clean clean) {
+		cleanRepository.delete(clean);
+		Clean c=cleanRepository.save(clean);
+		return c;
+	}
+
+	@RequestMapping("findClean/{id}")
+	public Clean findClean(@PathVariable("id") int id) {
+		Clean c=cleanRepository.findByStoreId(id);
+		return c;
+	}
+
 }
