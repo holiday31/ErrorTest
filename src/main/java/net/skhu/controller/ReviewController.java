@@ -1,7 +1,7 @@
 package net.skhu.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
@@ -26,7 +26,7 @@ public class ReviewController {
 	@Autowired
 	private StoreRepository storeRepository;
 
-	@RequestMapping("/review")
+	@PostMapping("/review")
 	public Review review(@RequestParam("photo") MultipartFile photo,@RequestParam("jsonFileVo") String jsonFileVo) throws FileUploadException, org.apache.tomcat.util.http.fileupload.FileUploadException {
 		UploadFile uploadFile = service.storeFile(photo);
 		Review review = new Review();

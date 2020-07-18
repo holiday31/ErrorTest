@@ -10,7 +10,7 @@ public class ReviewDto {
 	String userId;
 	String text;
 	float score;
-    UploadFile photo;
+//    UploadFile photo;
 
 //    @JsonIgnore
 //    private MultipartFile file;
