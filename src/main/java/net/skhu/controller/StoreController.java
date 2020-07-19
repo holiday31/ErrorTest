@@ -52,7 +52,7 @@ public class StoreController {
 			Store s = storeRepository.findByNameAndLatitudeAndLongitude(sto.getName(), sto.getLatitude(),
 					sto.getLongitude());
 			if (s == null) {
-				storeRepository.save(new Store(sto.getName(), sto.getLatitude(), sto.getLongitude()));
+				storeRepository.save(new Store(sto.getName(), sto.getLatitude(), sto.getLongitude(),sto.getAddress()));
 				// result.add(storeRepository.findById(id).get());
 				result.add(storeRepository.findByNameAndLatitudeAndLongitude(sto.getName(), sto.getLatitude(),
 						sto.getLongitude()));

@@ -19,6 +19,7 @@ public class Store {
     String name;
     double latitude;
     double longitude;
+    String address;
 
     @OneToMany(mappedBy="store")
     List<Review> reviews;
@@ -27,10 +28,11 @@ public class Store {
 
     }
 
-    public Store(String name,double latitude,double longitude) {
+    public Store(String name,double latitude,double longitude,String address) {
     	this.name=name;
     	this.latitude=latitude;
     	this.longitude=longitude;
+    	this.address=address;
     }
 
 

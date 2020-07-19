@@ -22,6 +22,5 @@ public class Clean {
 	int useCompany;
 	String companyName;
 	String companyPhone;
-	int photoId;
 	String rule;
 }

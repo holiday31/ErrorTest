@@ -7,4 +7,5 @@ public class StoreDto {
     String name;
     double latitude;
     double longitude;
+    String address;
 }
