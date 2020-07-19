@@ -14,6 +14,6 @@ public class Qna {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	int id;
 	String userId;
-	int storeid;
+	int storeId;
 	String content;
 }
