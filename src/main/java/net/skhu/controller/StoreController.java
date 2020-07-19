@@ -60,7 +60,6 @@ public class StoreController {
 				result.add(s);
 		}
 		return result;
-
 	}
 
 

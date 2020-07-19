@@ -29,7 +29,7 @@ public class Review {
 	float score;
 
     @OneToOne
-    @JoinColumn(name = "photo")
+    @JoinColumn(name = "photoId")
     UploadFile photo;
 
 //    @JsonIgnore
